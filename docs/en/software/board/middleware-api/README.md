@@ -1,0 +1,33 @@
+# Platform Middleware API Reference
+
+### 1. Preface
+* [About This Document](preface.md)
+* [System Architecture](00-arch.md)
+* [Middleware Overview](00-arch.md)
+
+### 2. API Reference
+* [Common services **COMMON**](01-common.md)
+* [Memory management **MEM**](02-memory.md)
+* [Multithreading **THREAD**](03-thread.md)
+* [Logging **LOG**](04-log.md)
+* [Audio **AUDIO**](05-audio.md)
+* [Audio input **AI**](05-1-ai.md)
+* [Audio output **AO**](05-2-ao.md)
+* [Audio encoding **AENC**](05-3-aenc.md)
+* [Audio decoding **ADEC**](05-4-adec.md)
+* [Audio effects **AUDIO_EFFECT** (VQE)](05-5-audio_effect.md)
+* [Audio tool service **ATS**](05-6-ats.md)
+* [Video **VIDEO**](06-video.md)
+* [Video input **VI**](06-1-vi.md)
+* [Video processing subsystem **VPSS**](06-2-vpss.md)
+* [Video processing subsystem, image effects **ISP/PP**](06-3-vpss_isp_pp.md)
+* [Video encoding **VENC**](06-4-venc.md)
+* [Video stream mode **APP_VIDEO**](06-5-app_video.md)
+* [ISP tuning tool service **ITS**](06-6-its.md)
+* [On-screen display **OSD**](07-osd.md)
+* [2D image processing unit **IPU**](08-ipu.md)
+* [Demuxing **DEMUX**](09-demux.md)
+* [Muxing **MUX**](10-mux.md)
+* [Motion detection algorithm **MRD**](11-mrd.md)
+* [Universally unique identifier **UUID**](12-uuid.md)
+* [Smart vision processing **SVP**](13-svp.md)

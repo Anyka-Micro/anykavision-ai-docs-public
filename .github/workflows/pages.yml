@@ -1,0 +1,73 @@
+name: Docs
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  # Languages deployed to GitHub Pages. Add "en" only after a named person signs the English translation off.
+  PUBLISH_LANGS: zh_CN
+
+concurrency:
+  group: pages-${{ github.ref }}
+  # Cancel superseded PR builds, but never interrupt a deploy from main.
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install --require-hashes -r requirements.txt
+      # Both languages are built and checked; only PUBLISH_LANGS are deployed.
+      # -W turns warnings into errors, which catches broken MyST links, anchors and images.
+      - name: Build en and zh_CN
+        run: |
+          for lang in en zh_CN; do
+            sphinx-build -W --keep-going -c docs -D language=$lang -A published="$PUBLISH_LANGS" docs/$lang _build/html/$lang
+          done
+      - name: Assemble the published site
+        run: |
+          mkdir -p _site
+          for lang in $PUBLISH_LANGS; do cp -R _build/html/$lang _site/$lang; done
+          set -- $PUBLISH_LANGS
+          if [ $# -eq 1 ]; then
+            printf '<!doctype html>\n<meta charset="utf-8">\n<title>AnykaVision AI</title>\n<meta http-equiv="refresh" content="0; url=%s/">\n<a href="%s/">AnykaVision AI</a>\n' "$1" "$1" > _site/index.html
+          else
+            cp docs/index.html _site/index.html
+          fi
+          touch _site/.nojekyll
+      # Raw HTML links, the language switcher and the README files Sphinx skips aren't covered by -W.
+      - name: Check links
+        run: |
+          python3 tools/check_links.py . _build/html
+          python3 tools/check_links.py . _site
+      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: _site
+
+  # Pages stays off until launch: set the repository variable PAGES_ENABLED to true to deploy.
+  deploy:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main' && vars.PAGES_ENABLED == 'true'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1

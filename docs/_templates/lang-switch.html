@@ -1,0 +1,8 @@
+{#- Both language trees share page paths, so link to the same page in the other build.
+    `published` (set with -A published="zh_CN en") hides a language that is not deployed. -#}
+{%- set other, label = ('zh_CN', '简体中文') if language == 'en' else ('en', 'English') %}
+{%- if not published or other in published.split() %}
+<div style="padding: 0 var(--sidebar-item-spacing-horizontal) var(--sidebar-item-spacing-vertical);">
+  <a href="{{ '../' * (pagename.count('/') + 1) }}{{ other }}/{{ pagename }}.html" hreflang="{{ other | replace('_', '-') }}" lang="{{ other | replace('_', '-') }}">{{ label }}</a>
+</div>
+{%- endif %}

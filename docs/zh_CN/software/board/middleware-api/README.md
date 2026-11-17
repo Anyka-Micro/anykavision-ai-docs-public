@@ -1,0 +1,33 @@
+# 中间件接口说明
+
+### 1. 前言
+* [文档概述](preface.md)
+* [系统架构](00-arch.md#系统架构)
+* [中间件简介](00-arch.md#中间件简介)
+
+### 2. API说明
+* [公共服务**COMMON**](01-common.md)
+* [内存管理**MEM**](02-memory.md)
+* [多线程操作**THREAD**](03-thread.md)
+* [日志打印**LOG**](04-log.md)
+* [音频**AUDIO**](05-audio.md)
+* [音频输入**AI**](05-1-ai.md)
+* [音频输出**AO**](05-2-ao.md)
+* [音频编码**AENC**](05-3-aenc.md)
+* [音频解码**ADEC**](05-4-adec.md)
+* [音效增强**VQE**](05-5-audio_effect.md)
+* [音频工具服务**ATS**](05-6-ats.md)
+* [视频**VIDEO**](06-video.md)
+* [视频输入**VI**](06-1-vi.md)
+* [视频处理子系统**VPSS**](06-2-vpss.md)
+* [视频处理子系统（效果部分）**ISP/PP**](06-3-vpss_isp_pp.md)
+* [视频编码**VENC**](06-4-venc.md)
+* [视频流模式**APP_VIDEO**](06-5-app_video.md)
+* [ISP调试工具服务**ITS**](06-6-its.md)
+* [视频叠加显示**OSD**](07-osd.md)
+* [2D图像处理单元**IPU**](08-ipu.md)
+* [音视频解析**DEMUX**](09-demux.md)
+* [音视频合成**MUX**](10-mux.md)
+* [移动侦测**MRD**](11-mrd.md)
+* [通用唯一识别码**UUID**](12-uuid.md)
+* [智能视觉处理**SVP**](13-svp.md)

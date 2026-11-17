@@ -1,0 +1,9 @@
+{% extends "!page.html" %}
+{#- Every page exists in both languages at the same path; list only the deployed ones. -#}
+{% block extrahead %}
+{{ super() }}
+{%- for lang, code in [('en', 'en'), ('zh_CN', 'zh-CN')] if not published or lang in published.split() %}
+<link rel="alternate" hreflang="{{ code }}" href="{{ site_root }}{{ lang }}/{{ pagename }}.html">
+{%- endfor %}
+<link rel="alternate" hreflang="x-default" href="{{ site_root }}">
+{% endblock %}
