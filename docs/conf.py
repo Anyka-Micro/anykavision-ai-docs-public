@@ -9,14 +9,16 @@ from sphinx.errors import ConfigError
 
 project = "AnykaVision AI"
 copyright = "2026, Guangzhou Anyka Microelectronics Co., Ltd."
-release = "V1.00"
+product_version = "V1.00"
+version = "1.0.0"
+release = version
 
 extensions = ["myst_parser"]
 myst_heading_anchors = 3
 exclude_patterns = ["**/README.md"]  # folder indexes for GitHub browsing, not site pages
 
 html_theme = "furo"
-html_title = f"{project} {release}"
+html_title = f"{project} {product_version} Documentation {release}"
 templates_path = ["_templates"]
 html_sidebars = {
     "**": [
@@ -30,7 +32,7 @@ html_sidebars = {
 }
 
 # Site URL once GitHub Pages is switched on.
-SITE = "https://anyka-micro.github.io/anykavision-ai-docs/"
+SITE = "https://anyka-micro.github.io/anykavision-ai-docs-public/"
 html_context = {"site_root": SITE}  # hreflang alternates in _templates/page.html
 
 

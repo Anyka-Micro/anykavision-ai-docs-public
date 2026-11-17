@@ -4,7 +4,8 @@ English | [简体中文](#anykavision-ai-文档)
 
 Documentation for **AnykaVision AI V1.00**, a development platform for AI camera glasses built on Anyka's KM02G series (image SoC) and AK1090 series (Bluetooth audio SoC) chips.
 
-- **Website:** <https://anyka-micro.github.io/anykavision-ai-docs/> (TODO: not published yet)
+- **Documentation release:** 1.0.0
+- **Website:** <https://anyka-micro.github.io/anykavision-ai-docs-public/> (pending; Pages deployment is disabled)
 - **Languages:** Simplified Chinese (complete) and English (translation in progress)
 
 ## Repository layout
@@ -62,7 +63,8 @@ The Anyka_Glasses companion app, the AK1090 firmware and the reference board's h
 
 **AnykaVision AI V1.00** 文档。AnykaVision AI 是基于安凯 KM02G 系列（图像 SoC）与 AK1090 系列（蓝牙音频 SoC）芯片的 AI 拍摄眼镜开发平台。
 
-- **网站：** <https://anyka-micro.github.io/anykavision-ai-docs/>（TODO：尚未发布）
+- **文档版本：** 1.0.0
+- **网站：** <https://anyka-micro.github.io/anykavision-ai-docs-public/>（待发布；Pages 部署目前处于关闭状态）
 - **语言：** 简体中文（完整）与英文（翻译中）
 
 ## 仓库结构
