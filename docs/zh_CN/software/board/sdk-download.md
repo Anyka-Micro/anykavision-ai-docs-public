@@ -16,7 +16,7 @@ Release 基础地址：`https://github.com/Anyka-Micro/anykavision-ai-docs-publi
 | 出厂 APP 分区脚本 | 出厂 USB 升级/UVC 环境需要，但本 SDK 不提供 | `/usr/sbin/usb_udc_g.sh` 和 `/usr/sbin/uvc.sh` 必须来自匹配的出厂固件 |
 | Anyka_Glasses APP/源码、AK1090 固件和产品板设计文件 | 待提供 | 不包含在 1.0.0 候选版本中；开发者可在后续版本补充 |
 
-清洁源码候选包不包含来源和许可尚未解决的厂商格式化工具。其打包、SDK 编译、主机端测试、烧写、OTA、Wi-Fi 和 USB 摄像头功能仍待验证。
+清洁源码包的打包和源码导出审查已通过。在离线 Ubuntu 22.04 x86-64 内部验证环境中，使用现有但不公开分发的工具链，`make test`（`list_test` 和在 ASan/UBSan 下运行的 `uvc_test`）以及面向 RISC-V 的 `make app` 均已通过。这不代表工具链已获准公开再分发；其许可证门禁仍未通过。由于未提供已获许可的格式化工具，完整 `ALLOW_LOCKED_ROOT=1 make` 按预期在生成镜像前停止。完整镜像、烧写、OTA、Wi-Fi 和 USB 摄像头硬件功能仍未验证。
 
 ## 开发者快速开始
 

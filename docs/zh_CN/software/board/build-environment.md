@@ -6,7 +6,7 @@
 
 - x86-64 Linux，Ubuntu 18.04 或更新版本。工具链只能在这类主机上运行；macOS 或 Windows 用户请使用 Linux 虚拟机或容器。需要安装的软件包见 SDK README 的“编译主机要求”。
 - 请把 SDK 解压到**不含空格**的路径：Makefile 无法处理路径中的空格。
-- `make test`（主机端单元测试）还需要 `linux-libc-dev`。
+- `make test`（主机端单元测试）需要主机软件包 `gcc`、`libc6-dev` 和 `linux-libc-dev`。
 
 ## 编译步骤
 

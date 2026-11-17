@@ -16,7 +16,7 @@ Release base: `https://github.com/Anyka-Micro/anykavision-ai-docs-public/release
 | Factory APP-partition scripts | Required for the factory USB update/UVC environment, but not supplied by this SDK | `/usr/sbin/usb_udc_g.sh` and `/usr/sbin/uvc.sh` must come from matching factory firmware |
 | Anyka_Glasses app/source, AK1090 firmware and board design files | Pending | Not included in the 1.0.0 candidate; the developer can add them later |
 
-The clean-source candidate omits the unresolved vendor formatter. Its packaging, SDK build, host tests, flashing, OTA, Wi-Fi and USB webcam operation are still pending validation.
+Clean-source packaging and source-export review passed. In an internal, offline Ubuntu 22.04 x86-64 environment, `make test` (`list_test` plus `uvc_test` under ASan/UBSan) and the RISC-V `make app` build passed using an existing withheld toolchain. This does not approve the toolchain for public redistribution; its licensing gate remains pending. With no licensed formatter supplied, full `ALLOW_LOCKED_ROOT=1 make` stopped before image creation as intended. Full images, flashing, OTA, Wi-Fi and USB webcam operation remain unverified.
 
 ## Developer quick start
 

@@ -6,7 +6,7 @@ This page explains the SDK build steps and their caveats. The exact commands are
 
 - x86-64 Linux, Ubuntu 18.04 or later. The toolchain runs only there; on macOS or Windows use a Linux VM or container. The packages to install are listed under **Host requirements** in the SDK README.
 - Extract the SDK into a path **without spaces**: the Makefiles cannot handle them.
-- `make test` (host-side unit tests) also needs `linux-libc-dev`.
+- `make test` (host-side unit tests) needs the host packages `gcc`, `libc6-dev` and `linux-libc-dev`.
 
 ## Build steps
 
