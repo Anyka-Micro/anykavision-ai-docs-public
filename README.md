@@ -45,11 +45,11 @@ Then open `_build/html/index.html`. Build both languages: the language switcher 
 2. Translate it from the same path in `docs/zh_CN`, using the terms in [docs/glossary.md](docs/glossary.md).
 3. Keep headings, code blocks, tables and anchors in the same structure as the Chinese page.
 
-## Related packages
+## Developer packages
 
-The SDK and its release assets have not been published for public download yet. Obtain a developer-provided package from Anyka if you need to use these instructions. Maintainers can add the public repository and download links here in a later release.
+The 1.0.0 release candidate prepares the core KM02G SDK source archive and its upstream BusyBox/mtd-utils build inputs for distribution from this repository's Releases page. See [SDK Download](docs/en/software/board/sdk-download.md) for the exact asset names, verification steps and current release gates. The cross toolchain is still awaiting corresponding-source and licence verification, so this is not yet a complete public developer kit.
 
-The Anyka_Glasses companion app, the AK1090 firmware and the reference board's hardware design files have not been published with this release. They can be added in a later release when the developer makes them available.
+The Anyka_Glasses companion app and source, AK1090 firmware, reference-board hardware design files, and factory APP-partition USB scripts are not included. They can be added in a later release when the developer makes them available.
 
 ## Licence
 
@@ -104,11 +104,11 @@ python3 tools/check_links.py . _build/html
 2. 对照 `docs/zh_CN` 中相同路径的页面进行翻译，术语请参考 [docs/glossary.md](docs/glossary.md)。
 3. 标题、代码块、表格和锚点的结构须与中文页面保持一致。
 
-## 相关软件包
+## 开发者软件包
 
-SDK 及其 Release 附件尚未提供公开下载。如需按本文档操作，请先向安凯获取开发者提供的软件包。维护者可在开发者正式发布后补充公开仓库和下载链接。
+1.0.0 候选版本准备通过本仓库的 Releases 页面分发 KM02G SDK 核心源码包，以及编译所需的 BusyBox/mtd-utils 上游源码附件。准确的附件名称、校验步骤和当前发布门禁见 [SDK下载](docs/zh_CN/software/board/sdk-download.md)。交叉工具链仍需完成对应源码和许可证核验，因此当前不能视为完整的公开开发套件。
 
-Anyka_Glasses 配套 APP、AK1090 固件以及产品板硬件设计资料尚未随本次版本发布。开发者提供这些资料后，可在后续版本中补充。
+Anyka_Glasses 配套 APP 及源码、AK1090 固件、产品板硬件设计资料，以及出厂 APP 分区中的 USB 脚本不包含在内。开发者提供这些资料后，可在后续版本中补充。
 
 ## 许可证
 

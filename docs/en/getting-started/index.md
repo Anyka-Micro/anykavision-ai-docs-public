@@ -11,6 +11,8 @@ Follow these steps to go from getting the SDK to running your firmware on the re
 3. **Flash**: [Firmware Flashing](../software/board/firmware-flashing.md)
 4. **Develop applications**: [Application Development](../software/board/app-development.md)
 
+The core KM02G SDK source is being prepared as a 1.0.0 release asset. Its public build inputs and remaining release gates are listed under [SDK Download](../software/board/sdk-download.md); the cross toolchain is still pending redistribution approval, so the public developer kit is not yet complete.
+
 The Anyka_Glasses companion phone app has not been published with this release. The pages under [App Development](../software/app/index.md) are for reference only; the developer can add the app package in a later release.
 
 For an overview of the whole flow and of the board's basic operation, read the [Quick Development Guide](../software/board/quick-development.md).
@@ -60,7 +62,7 @@ AnykaVision AI is for:
 
 **3. Updates**
 
-- AnykaVision AI content is updated continuously. The developer can add the public SDK repository and release links to [SDK Download](../software/board/sdk-download.md) when the packages are published.
+- AnykaVision AI content is updated continuously. [SDK Download](../software/board/sdk-download.md) lists the 1.0.0 candidate assets and identifies which downloads remain gated. A missing release asset is not yet public.
 
 ## Technical support
 
