@@ -41,10 +41,10 @@
 
 按[SDK下载](sdk-download.md)和[编译环境配置](build-environment.md)完成以下准备，具体命令见 SDK README：
 
-1. 1.0.0 Release 附件发布后，下载并校验 SDK 源码包和 BusyBox、mtd-utils 源码包；把 SDK 解压到不含空格的路径。
+1. 从 1.0.0 Release 下载并校验已发布的 SDK 源码包和 BusyBox、mtd-utils 源码包；把 SDK 解压到不含空格的路径。
 2. 把校验通过的 BusyBox 和 mtd-utils 源码包放入 SDK 的 `tools/` 目录。
 3. 工具链公开再分发门禁通过前，请向安凯获取校验和匹配的工具链压缩包并放入 `tools/`；然后运行 `./scripts/get_toolchain.sh`，并把 `/opt/riscv64-anyka-linux-musl/bin` 加入 `PATH`。
-4. 清洁公开源码包已移除来源和许可未解决的旧版 `rootfs/skeleton/etc/format_tool` 文件。生成完整 ramdisk 和固件镜像前，须按适当的许可条款另行向安凯获取格式化工具，并通过 `FORMAT_TOOL_BIN=/absolute/path/to/licensed/format_tool` 传入；默认回退路径为 `rootfs/vendor/format_tool`。缺少时不要运行完整 `make` 或 `make install`。
+4. 清洁公开源码包已移除来源和许可未解决的旧版 `rootfs/skeleton/etc/format_tool` 文件。生成完整 ramdisk 和固件镜像前，须按适当的许可条款另行向安凯获取已批准的 V1.00 格式化工具，满足[SDK下载](sdk-download.md)所列的可执行权限和 SHA-256 要求，再通过 `FORMAT_TOOL_BIN=/absolute/path/to/licensed/format_tool` 传入；默认回退路径为 `rootfs/vendor/format_tool`。缺少时不要运行完整 `make` 或 `make install`。
 5. 仅在生成完整镜像时，把 `rootfs/config/shadow` 复制到 `rootfs/config.local/`，在副本的 `root` 行中设置密码哈希（`openssl passwd -6`），不要修改受 git 跟踪的 `rootfs/config/shadow`。每台设备或每个构建使用唯一的强密码，不要在设备上发布共用的开发密码，也不要提交或共享密码哈希。
 
 ### 3.2 编译程序

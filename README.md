@@ -20,6 +20,7 @@ docs/
 └── en/            English translation, same file paths as zh_CN
 tools/
 ├── check_links.py           relative-link check (run in CI after the build)
+├── check_sdk_download_example.py  tests the documented download failure paths
 └── check_api_vs_headers.py  compares the API reference with the SDK headers (report only)
 requirements.in    top-level dependencies; requirements.txt is the hash-locked install set
 ```
@@ -47,7 +48,7 @@ Then open `_build/html/index.html`. Build both languages: the language switcher 
 
 ## Developer packages
 
-The 1.0.0 release candidate prepares the core KM02G SDK source archive and its upstream BusyBox/mtd-utils build inputs for distribution from this repository's Releases page. See [SDK Download](docs/en/software/board/sdk-download.md) for the exact asset names, verification steps and current release gates. The cross toolchain is still awaiting corresponding-source and licence verification, so this is not yet a complete public developer kit.
+The first 1.0.0 developer draft publishes the core KM02G SDK source archive and its upstream BusyBox/mtd-utils build inputs on this repository's Releases page. See [SDK Download](docs/en/software/board/sdk-download.md) for the exact asset names, verification steps and remaining release gates. The cross toolchain is still awaiting corresponding-source and licence verification, so this is not yet a complete public developer kit.
 
 The Anyka_Glasses companion app and source, AK1090 firmware, reference-board hardware design files, and factory APP-partition USB scripts are not included. They can be added in a later release when the developer makes them available.
 
@@ -79,6 +80,7 @@ docs/
 └── en/            英文翻译，文件路径与 zh_CN 一致
 tools/
 ├── check_links.py           相对链接检查（CI 在构建后运行）
+├── check_sdk_download_example.py  测试文档下载命令的失败路径
 └── check_api_vs_headers.py  对比 API 参考与 SDK 头文件（仅输出报告）
 requirements.in    顶层依赖；requirements.txt 为带哈希的锁定安装列表
 ```
@@ -106,7 +108,7 @@ python3 tools/check_links.py . _build/html
 
 ## 开发者软件包
 
-1.0.0 候选版本准备通过本仓库的 Releases 页面分发 KM02G SDK 核心源码包，以及编译所需的 BusyBox/mtd-utils 上游源码附件。准确的附件名称、校验步骤和当前发布门禁见 [SDK下载](docs/zh_CN/software/board/sdk-download.md)。交叉工具链仍需完成对应源码和许可证核验，因此当前不能视为完整的公开开发套件。
+首个 1.0.0 开发者草案已通过本仓库的 Releases 页面发布 KM02G SDK 核心源码包，以及编译所需的 BusyBox/mtd-utils 上游源码附件。准确的附件名称、校验步骤和剩余发布门禁见 [SDK下载](docs/zh_CN/software/board/sdk-download.md)。交叉工具链仍需完成对应源码和许可证核验，因此当前不能视为完整的公开开发套件。
 
 Anyka_Glasses 配套 APP 及源码、AK1090 固件、产品板硬件设计资料，以及出厂 APP 分区中的 USB 脚本不包含在内。开发者提供这些资料后，可在后续版本中补充。
 

@@ -2,7 +2,7 @@
 
 This guide takes you through building, flashing and running the glasses firmware on the reference board (KM02G series chip + AK1090 series chip).
 
-1. **Get the SDK, run its tests and build the application**: see [SDK Download](sdk-download.md) and [Build Environment Setup](build-environment.md). The exact commands are in the SDK README inside the SDK source archive. Full firmware images additionally require a separately supplied licensed vendor formatter passed through `FORMAT_TOOL_BIN`.
+1. **Get the SDK, run its tests and build the application**: see [SDK Download](sdk-download.md) and [Build Environment Setup](build-environment.md). The exact commands are in the SDK README inside the SDK source archive. Full firmware images additionally require the separately supplied approved V1.00 formatter to satisfy the documented executable and SHA-256 checks before it is passed through `FORMAT_TOOL_BIN`.
 2. **Flash the board only after a full image is built and validated**: see [Firmware Flashing](firmware-flashing.md).
 
 ```{note}

@@ -11,7 +11,7 @@
 3. **烧写**：[固件烧写](../software/board/firmware-flashing.md)
 4. **应用开发**：[应用开发说明](../software/board/app-development.md)
 
-KM02G SDK 核心源码正在准备为 1.0.0 Release 附件。公开编译输入和剩余发布门禁见[SDK下载](../software/board/sdk-download.md)；交叉工具链仍待公开再分发批准，因此公开开发套件尚不完整。
+首个 1.0.0 开发者草案已发布 KM02G SDK 核心源码及其公开编译输入。下载地址和剩余发布门禁见[SDK下载](../software/board/sdk-download.md)；交叉工具链仍待公开再分发批准，因此公开开发套件尚不完整。
 
 配套的 Anyka_Glasses 手机 APP 尚未随本次版本发布，[APP开发](../software/app/index.md)中的页面仅供参考；开发者可在后续版本中补充安装包。
 
@@ -62,14 +62,14 @@ AnykaVision AI适合以下开发者使用：
 
 **3. 内容更新**
 
-- AnykaVision AI 内容会持续更新。[SDK下载](../software/board/sdk-download.md)列出 1.0.0 候选附件及仍受门禁限制的下载。Release 附件不存在表示尚未公开。
+- AnykaVision AI 内容会持续更新。[SDK下载](../software/board/sdk-download.md)列出已发布的 1.0.0 附件及仍受门禁限制的输入。
 
 ## 技术支持
 
 如果您在使用AnykaVision AI的过程中遇到问题，建议您：
 
 - 查阅[FAQ](../faq.md)，这里列出了常见问题及其解决方法。
-- 文档问题可在本说明文档仓库提交 issue。SDK 或硬件软件包尚未公开期间，请通过已有的安凯支持渠道获取技术帮助。
+- 文档问题可在本说明文档仓库提交 issue。如需 SDK 或硬件技术支持，包括获取仍未公开的工具链等输入，请通过已有的安凯支持渠道联系。
 
 ---
 

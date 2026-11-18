@@ -11,7 +11,7 @@ Follow these steps to go from getting the SDK to running your firmware on the re
 3. **Flash**: [Firmware Flashing](../software/board/firmware-flashing.md)
 4. **Develop applications**: [Application Development](../software/board/app-development.md)
 
-The core KM02G SDK source is being prepared as a 1.0.0 release asset. Its public build inputs and remaining release gates are listed under [SDK Download](../software/board/sdk-download.md); the cross toolchain is still pending redistribution approval, so the public developer kit is not yet complete.
+The first 1.0.0 developer draft publishes the core KM02G SDK source and its public build inputs. The downloads and remaining release gates are listed under [SDK Download](../software/board/sdk-download.md); the cross toolchain is still pending redistribution approval, so the public developer kit is not yet complete.
 
 The Anyka_Glasses companion phone app has not been published with this release. The pages under [App Development](../software/app/index.md) are for reference only; the developer can add the app package in a later release.
 
@@ -62,14 +62,14 @@ AnykaVision AI is for:
 
 **3. Updates**
 
-- AnykaVision AI content is updated continuously. [SDK Download](../software/board/sdk-download.md) lists the 1.0.0 candidate assets and identifies which downloads remain gated. A missing release asset is not yet public.
+- AnykaVision AI content is updated continuously. [SDK Download](../software/board/sdk-download.md) lists the published 1.0.0 assets and identifies the inputs that remain gated.
 
 ## Technical support
 
 If you run into problems while using AnykaVision AI, we suggest that you:
 
 - Check the [FAQ](../faq.md), which lists common problems and their solutions.
-- Open an issue in this documentation repository to report a documentation problem. Contact Anyka through your existing support channel for SDK or hardware support while those packages remain unpublished.
+- Open an issue in this documentation repository to report a documentation problem. Contact Anyka through your existing support channel for SDK or hardware support, including access to the toolchain and other inputs that remain unpublished.
 
 ---
 
