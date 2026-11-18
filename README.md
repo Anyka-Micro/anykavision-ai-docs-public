@@ -6,7 +6,7 @@ Documentation for **AnykaVision AI V1.00**, a development platform for AI camera
 
 - **Documentation release:** 1.0.0
 - **Website:** <https://anyka-micro.github.io/anykavision-ai-docs-public/> (pending; Pages deployment is disabled)
-- **Languages:** Simplified Chinese (complete) and English (translation in progress)
+- **Languages:** Simplified Chinese and English (translated from the supplied Chinese source; genuine source gaps remain marked)
 
 ## Repository layout
 
@@ -40,11 +40,9 @@ python3 tools/check_links.py . _build/html
 
 Then open `_build/html/index.html`. Build both languages: the language switcher links between them. Content still waiting for Anyka (removed figures, text that needs a rewrite) is kept in the sources but left out of the site; add `-t anyka_review` to the `sphinx-build` commands to see it. GitHub Actions runs the same build and link check on every pull request and every push to `main`. Deployment to GitHub Pages is switched off until launch; once it is on, only the Chinese site is deployed until a named reviewer signs the English translation off (`PUBLISH_LANGS` in `.github/workflows/pages.yml`).
 
-## Translating
+## Maintaining the translation
 
-1. Pick a page marked "Translation pending" in `docs/en`.
-2. Translate it from the same path in `docs/zh_CN`, using the terms in [docs/glossary.md](docs/glossary.md).
-3. Keep headings, code blocks, tables and anchors in the same structure as the Chinese page.
+When the Chinese source changes, update the page at the same path in `docs/en`, using [docs/glossary.md](docs/glossary.md). Keep headings, code blocks, tables, anchors, API identifiers and machine-facing strings aligned with the source. Genuine source gaps must remain explicit rather than being filled by inference.
 
 ## Developer packages
 
@@ -66,7 +64,7 @@ The Anyka_Glasses companion app and source, AK1090 firmware, reference-board har
 
 - **文档版本：** 1.0.0
 - **网站：** <https://anyka-micro.github.io/anykavision-ai-docs-public/>（待发布；Pages 部署目前处于关闭状态）
-- **语言：** 简体中文（完整）与英文（翻译中）
+- **语言：** 简体中文与英文（英文已根据所提供的中文源文档完成翻译；真实的源文档缺口仍保留明确标记）
 
 ## 仓库结构
 
@@ -100,11 +98,9 @@ python3 tools/check_links.py . _build/html
 
 然后打开 `_build/html/index.html`。请同时构建两种语言，语言切换链接依赖两者。仍待安凯处理的内容（已移除的图片、需要改写的文字）保留在源文件中，但不会出现在站点上；在 `sphinx-build` 命令中加上 `-t anyka_review` 即可查看。GitHub Actions 会在每个拉取请求以及推送到 `main` 时执行相同的构建和链接检查。在正式发布前，GitHub Pages 部署处于关闭状态；开启后，在英文翻译经指定审阅人确认之前只部署中文站点（见 `.github/workflows/pages.yml` 中的 `PUBLISH_LANGS`）。
 
-## 参与翻译
+## 维护英文翻译
 
-1. 在 `docs/en` 中选择标记为“Translation pending”的页面。
-2. 对照 `docs/zh_CN` 中相同路径的页面进行翻译，术语请参考 [docs/glossary.md](docs/glossary.md)。
-3. 标题、代码块、表格和锚点的结构须与中文页面保持一致。
+中文源文档更新时，请同步更新 `docs/en` 中相同路径的页面，术语参考 [docs/glossary.md](docs/glossary.md)。标题、代码块、表格、锚点、API 标识符和面向机器的字符串应与源文档保持一致；真实的源文档缺口必须明确保留，不得推测补全。
 
 ## 开发者软件包
 
