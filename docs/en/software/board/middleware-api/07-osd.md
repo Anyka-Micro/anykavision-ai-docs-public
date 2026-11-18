@@ -477,7 +477,7 @@ AK_S32 AK_MPI_OSD_UpdateRegion(AK_S32 s32RegionId, AK_S32 s32Status, OSD_REGION_
 
   【Description】
 
-  Line-data structure. This function is not supported.
+  Line-data structure. This feature is not supported.
 
   【Definition】
 

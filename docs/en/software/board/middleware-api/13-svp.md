@@ -49,6 +49,8 @@ The user obtains a frame of data (in RGB_HWC format) through the VI module API, 
 | AK_MPI_SVP_SetRaram     | Sets neural-network computation thresholds |
 | <br/>                   |                     |
 
+> **Source note:** The Chinese source uses `AK_MPI_SVP_SetRaram` in this overview. The documented API and the supplied `ak_svp.h` header declare the setter as `AK_MPI_SVP_SetParam`; use that declared name.
+
 ## Data Structures
 
 ###  AK_SVP_ENV_MODE_E
@@ -158,7 +160,7 @@ typedef enum akSVP_MODEL_E
 
 ​		【Description】
 
-YOLOV5N_640 currently has the following models. Their detection classes, resolutions, and input-data formats are listed below:
+The source states that YOLOV5N_640 currently has four models, but the table below lists five. Confirm the supported model set with the vendor. The listed detection classes, resolutions, and input-data formats are:
 
 | YOLOV5N_640 **model name** | **Detection target** | Resolution | Input-data format |
 | ------------------------- | -------- | ------- | ------- |
@@ -1342,6 +1344,8 @@ Paired function: `AK_MPI_SVP_Release()`.
 | AK_MPI_SVP_GetRaram   | After AK_MPI_SVP_CreateChn and before AK_MPI_SVP_DestroyChn |
 | AK_MPI_SVP_SetRaram   | After AK_MPI_SVP_CreateChn and before AK_MPI_SVP_DestroyChn |
 | AK_MPI_SVP_Process    | After AK_MPI_SVP_CreateChn and before AK_MPI_SVP_DestroyChn |
+
+> **Source note:** The source dependency row spells the setter `AK_MPI_SVP_SetRaram`; the documented API and supplied header name it `AK_MPI_SVP_SetParam`. The dependency shown for that source row applies to `AK_MPI_SVP_SetParam`.
 
 &emsp;&emsp;【Call order】
 
