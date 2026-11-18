@@ -41,26 +41,27 @@
 
 按[SDK下载](sdk-download.md)和[编译环境配置](build-environment.md)完成以下准备，具体命令见 SDK README：
 
-1. 把 SDK 克隆到不含空格的路径。
-2. 运行 `./scripts/get_toolchain.sh` 安装工具链，并把 `/opt/riscv64-anyka-linux-musl/bin` 加入 `PATH`。
-3. ramdisk 无需下载：首次执行 `make` 时会下载 BusyBox 和 mtd-utils 源码包，并从源码生成 ramdisk。
-4. 把 `rootfs/config/shadow` 复制到 `rootfs/config.local/`，在副本的 `root` 行中设置密码哈希（`openssl passwd -6`），不要修改受 git 跟踪的 `rootfs/config/shadow`。每台设备或每个构建使用唯一的强密码，不要在设备上发布共用的开发密码，也不要提交或共享密码哈希。
+1. 从 1.0.0 Release 下载并校验已发布的 SDK 源码包和 BusyBox、mtd-utils 源码包；把 SDK 解压到不含空格的路径。
+2. 把校验通过的 BusyBox 和 mtd-utils 源码包放入 SDK 的 `tools/` 目录。
+3. 工具链公开再分发门禁通过前，请向安凯获取校验和匹配的工具链压缩包并放入 `tools/`；然后运行 `./scripts/get_toolchain.sh`，并把 `/opt/riscv64-anyka-linux-musl/bin` 加入 `PATH`。
+4. 清洁公开源码包已移除来源和许可未解决的旧版 `rootfs/skeleton/etc/format_tool` 文件。生成完整 ramdisk 和固件镜像前，须按适当的许可条款另行向安凯获取已批准的 V1.00 格式化工具，满足[SDK下载](sdk-download.md)所列的可执行权限和 SHA-256 要求，再通过 `FORMAT_TOOL_BIN=/absolute/path/to/licensed/format_tool` 传入；默认回退路径为 `rootfs/vendor/format_tool`。缺少时不要运行完整 `make` 或 `make install`。
+5. 仅在生成完整镜像时，把 `rootfs/config/shadow` 复制到 `rootfs/config.local/`，在副本的 `root` 行中设置密码哈希（`openssl passwd -6`），不要修改受 git 跟踪的 `rootfs/config/shadow`。每台设备或每个构建使用唯一的强密码，不要在设备上发布共用的开发密码，也不要提交或共享密码哈希。
 
 ### 3.2 编译程序
 
-编译程序：可执行 `make` 命令，编译所有模块，生成升级包 `update.bin`，以及 `ramfs.img` 和 `usr.jffs2`（均位于 `tools/ota` 文件夹下）。或执行 `make clean; make app; make install` 分步骤编译（`make install` 需要先编译好应用）。
-
-分步编译：
+公开源码包可运行主机端测试并编译应用：
 
 ```bash
 make clean        # 清除
+make test         # 运行主机端测试
 make app          # 编译 app
-make install      # 打包镜像，需要先执行 make app
 ```
+
+只有在另行提供的已获许可厂商格式化工具和全部完整镜像输入就绪后，才能运行 `FORMAT_TOOL_BIN=/absolute/path/to/licensed/format_tool make` 或相应的 `make install`。SDK 会把选定工具复制到镜像内的 `/etc/format_tool`。由此生成的 `update.bin`、`ramfs.img` 和 `usr.jffs2` 位于 `tools/ota`，并须通过所需的开发板验证。
 
 ## 第四章 固件烧写
 
-U 盘升级和恢复出厂设置的步骤见[固件烧写](firmware-flashing.md)。
+完整镜像构建并验证后，U 盘升级和恢复出厂设置的步骤见[固件烧写](firmware-flashing.md)。
 
 ---
 

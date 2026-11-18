@@ -30,6 +30,8 @@ jobs:
           python-version: "3.12"
           cache: pip
       - run: pip install --require-hashes -r requirements.txt
+      - name: Check SDK download example
+        run: python3 tools/check_sdk_download_example.py
       # Both languages are built and checked; only PUBLISH_LANGS are deployed.
       # -W turns warnings into errors, which catches broken MyST links, anchors and images.
       - name: Build en and zh_CN
